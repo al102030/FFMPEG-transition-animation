@@ -1,0 +1,105 @@
+ffmpeg -loop 1 -t 3 -i img001.jpg -loop 1 -t 3 -i img002.jpg -loop 1 -t 3 -i img003.jpg -loop 1 -t 3 -i img004.jpg -loop 1 -t 3 -i img005.jpg -filter_complex "[0][1]xfade=transition=circlecrop:duration=0.5:offset=2.5[f0]; [f0][2]xfade=transition=smoothleft:duration=0.5:offset=5[f1]; [f1][3]xfade=transition=pixelize:duration=0.5:offset=7.5[f2]; [f2][4]xfade=transition=hblur:duration=0.5:offset=10[f3]" -map "[f3]" -r 25 -pix_fmt yuv420p -vcodec libx264 output-swipe-custom.mp4
+
+ffmpeg -loop 1 -t 5 -i img001.jpg -loop 1 -t 5 -i img002.jpg -filter_complex "[0][1]xfade=transition=fade:duration=1:offset=4,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif
+
+ffmpeg -loop 1 -t 5 -i img001.jpg -loop 1 -t 5 -i img002.jpg -filter_complex "[0][1]xfade=transition=wiperight:duration=1:offset=4,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif
+
+ffmpeg -loop 1 -t 5 -i img001.jpg -loop 1 -t 5 -i img002.jpg -filter_complex "[0][1]xfade=transition=dissolve:duration=1:offset=4,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif
+
+ffmpeg -loop 1 -t 5 -i img001.jpg -loop 1 -t 5 -i img002.jpg -filter_complex "[0][1]xfade=transition=hblur:duration=1:offset=4,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif
+
+ffmpeg -loop 1 -t 5 -i img001.jpg -loop 1 -t 5 -i img002.jpg -filter_complex "[0][1]xfade=transition=circlecrop:duration=1:offset=4,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif
+
+ffmpeg -loop 1 -t 5 -i img001.jpg -loop 1 -t 5 -i img002.jpg -filter_complex "[0][1]xfade=transition=rectcrop:duration=1:offset=4,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif
+
+ffmpeg -loop 1 -t 5 -i img001.jpg -loop 1 -t 5 -i img002.jpg -filter_complex "[0][1]xfade=transition=hrslice:duration=1:offset=4,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif
+
+ffmpeg -loop 1 -t 5 -i img001.jpg -loop 1 -t 5 -i img002.jpg -filter_complex "[0][1]xfade=transition=pixelize:duration=1:offset=4,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif
+
+ffmpeg -loop 1 -t 5 -i img001.jpg -loop 1 -t 5 -i img002.jpg -filter_complex "[0][1]xfade=transition=zoomin:duration=1:offset=4,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif
+
+
+Slideshow animation Name:
+1- fade
+2- fadeblack
+3- fadewhite
+5- distance
+6- wipeleft
+7- wiperight
+8- wipeup
+9- wipedown
+10- slideleft
+11- slideright
+12- slideup
+13- slidedown
+14- smoothleft
+15- smoothright
+16- smoothup
+17- smoothdown
+18- circlecrop
+19- rectcrop
+20- circleclose
+21- circleopen
+22- horzclose
+23- horzopen
+24- vertclose
+25- vertopen
+26- diagbl
+27- diagbr
+28- diagtl
+29- diagtr
+30- hlslice
+31- hrslice
+32- vuslice
+33- vdslice
+34- dissolve
+35- pixelize
+36- radial
+37- hblur
+38- wipetl
+39- wipetr
+40- wipebl
+41- wipebr
+42- zoomin
+43- transition
+44- fadegrays
+45- squeezev
+46- squeezeh
+47- zoomin
+48- hlwind
+49- hrwind
+50- vuwind
+51- vdwind
+52- coverleft
+53- coverleft
+54- coverright
+55- coverup
+56- coverdown
+57- revealleft
+58- revealright
+59- revealup
+60- revealdown
+ 	 	 	
+			
+ 	 	 	
+			
+ 	 	 	
+			
+ 	 	 	
+			
+ 	 	 	
+			
+ 	 	 	
+			
+ 	 	 	
+			
+ 	 	 	
+			
+ 	 	 	
+ 	 	 	
+			
+ 	 	 	
+			
+ 	 	 	
+			
+ 	 	 	 
